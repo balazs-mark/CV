@@ -10,20 +10,20 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-    <title>Önéletrajz</title>
+    <title>{{ template_items.tab_title }}</title>
 </head>
 <body>
   <nav>
-      <li id="hide_sidebar"><img id="hide_sidebar_icon" class="nav_bar_icon" src="/static/icons/side_menu_icon_2.png"><span class="nav_bar_text">Oldalsáv elrejtése</span></li>
-      <li id="switch_english" disabled><img class="nav_bar_icon" src="/static/flags/brit_flag.jpg"><span class="nav_bar_text">Megtekintés angolul</span></li>
-      <li id="open_as_pdf"><img class="nav_bar_icon" src="/static/icons/pdf_icon.png"><span class="nav_bar_text">Megnyitás PDF-ként</span></li>
-      <li id="open_source_code"><img class="nav_bar_icon" src="/static/icons/github_icon.png"><span class="nav_bar_text">Forráskód megtekintése</span></li>
-      <!-- <li id="open_admin_area"><img class="nav_bar_icon" src="/static/icons/admin_icon.png"><span class="nav_bar_text">Admin felület</span></li> -->
+      <li id="hide_sidebar"><img id="hide_sidebar_icon" class="nav_bar_icon" src="/static/icons/side_menu_icon_2.png"><span class="nav_bar_text">{{ template_items.sidebar.hide_sidebar }}</span></li>
+      <li id="{{ template_items.sidebar.change_language.id }}" disabled><img class="nav_bar_icon" src="/static/flags/brit_flag.jpg"><span class="nav_bar_text">{{ template_items.sidebar.change_language.text }}</span></li>
+      <li id="open_as_pdf"><img class="nav_bar_icon" src="/static/icons/pdf_icon.png"><span class="nav_bar_text">{{ template_items.sidebar.open_as_pdf }}</span></li>
+      <li id="open_source_code"><img class="nav_bar_icon" src="/static/icons/github_icon.png"><span class="nav_bar_text">{{ template_items.sidebar.open_source_code }}</span></li>
+      <!-- <li id="open_admin_area"><img class="nav_bar_icon" src="/static/icons/admin_icon.png"><span class="nav_bar_text">{{ template_items.sidebar.open_admin_area }}</span></li> -->
   </nav>
   <img id="hamburger_menu_icon" src="/static/icons/rounded_menu_icon.png">
   <div id="cv-content"
     <div class="cv-page">
-        <h1 class="space-before-50">Önéletrajz</h1>
+        <h1 class="space-before-50">{{ template_items.page.title }}</h1>
         <img id="photo" class="photo space-before-16" src="/static/images/mark_balazs_small.jpg" alt="photo">
         <div class="info space-before-100">
             <div class="name">{{ datas.name }}</div>
@@ -34,7 +34,7 @@
             <i class="fab fa-skype skype-icon"></i><a class="skype-link" href="skype:{{ datas.contacts.skype }}">{{ datas.contacts.skype }}</a><br>
             <img src="/static/icons/github_icon.png" class="icon"> <a href="https://github.com/{{ datas.github_username }}">{{ datas.github_username }}</a><br>
         </div>
-        <h2 class="space-before-16">Képzettség:</h2>
+        <h2 class="space-before-16">{{ template_items.page.educations }}:</h2>
         <table>
           {% for education in datas.educations %}
             <tr>
@@ -56,7 +56,7 @@
             </tr>
           {% endfor %}
         </table>
-        <h2 class="space-before-16">Informatikai ismeretek:</h2>
+        <h2 class="space-before-16">{{ template_items.page.it_skills }}:</h2>
         <ul>
           {% for it_skill in datas.it_skills %}
             {% if it_skill.link %}
@@ -68,7 +68,7 @@
         </ul>
       </div>
         <div class="cv-page">
-          <h2>Munkahelyek:</h2>
+          <h2>{{ template_items.page.work_experience }}:</h2>
           <table>
             {% for work_experience in datas.work_experiences %}
               <tr>
@@ -83,19 +83,19 @@
               </tr>
             {% endfor %}
           </table>
-        <h2>Nyelvtudás:</h2>
+        <h2>{{ template_items.page.spoken_languages }}:</h2>
         <ul>
           {% for spoken_language in datas.spoken_languages %}
             <a href="{{ spoken_language.link }}" target="_blank"><li>{{ spoken_language.text }}</li></a>
           {% endfor %}
         </ul>
-        <h2>Gépjárművezetés:</h2>
+        <h2>{{ template_items.page.driving_skills }}:</h2>
         <ul>
           {% for driving_skill in datas.driving_skills %}
             <li>{{ driving_skill }}</li>
           {% endfor %}
         </ul>
-        <h2>Egyéb:</h2>
+        <h2>{{ template_items.page.others }}:</h2>
         <ul>
           {% for other in datas.others %}
             {% if other.link %}

@@ -1,0 +1,22 @@
+{
+    "tab_title": "Curriculum Vitae",
+    "sidebar": {
+        "hide_sidebar": "Hide sidebar",
+        "change_language": {
+            "id": "switch_hungarian",
+            "text": "View in hungarian"
+        },
+        "open_as_pdf": "Open as PDF",
+        "open_source_code": "Read source code",
+        "open_admin_area": "Admin area"
+    },
+    "page": {
+        "title": "Curriculum Vitae",
+        "educations": "Educations",
+        "it_skills": "IT skills",
+        "work_experience": "Work experience",
+        "spoken_languages": "Spoken languages",
+        "driving_skills": "Driving skills",
+        "others": "Others"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "tab_title": "Önéletrajz",
+    "sidebar": {
+        "hide_sidebar": "Oldalsáv elrejtése",
+        "change_language": {
+            "id": "switch_english",
+            "text": "Megtekintés angolul"
+        },
+        "open_as_pdf": "Megnyitás PDF-ként",
+        "open_source_code": "Forráskód megtekintése",
+        "open_admin_area": "Admin felület"
+    },
+    "page": {
+        "title": "Önéletrajz",
+        "educations": "Képzettség",
+        "it_skills": "Informatikai ismeretek",
+        "work_experience": "Munkahelyek",
+        "spoken_languages": "Nyelvtudás",
+        "driving_skills": "Gépjárművezetés",
+        "others": "Egyéb"
+    }
+}

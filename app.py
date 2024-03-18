@@ -13,10 +13,9 @@ def under_construction():
 @app.route("/gov/<language>/")
 def cv_for_goverments(language):
     if language == "hu":
-        return render_template('gov.html', datas=get_data_from_json_file("user_details_hun.json"))
+        return render_template('gov.html', template_items=get_data_from_json_file("template_items_hun.json"), datas=get_data_from_json_file("user_details_hun.json"))
     if language == "en":
-    #     return render_template('gov.html', datas=get_data_from_json_file("user_details_eng.json"))
-        return render_template("under_construction.html")
+        return render_template('gov.html', template_items=get_data_from_json_file("template_items_eng.json"), datas=get_data_from_json_file("user_details_eng.json"))   
     else:
         return render_template('page_not_found.html'), 404
 
@@ -27,4 +26,4 @@ def page_not_found(error):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=5000, debug=True)

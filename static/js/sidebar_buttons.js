@@ -21,6 +21,7 @@ $("#open_as_pdf").click(() => window.open("/static/contents/Márk Balázs önél
 
 // Switch language
 $("#switch_english").click(() => window.open(url="/gov/en/", target="_self"));
+$("#switch_hungarian").click(() => window.open(url="/gov/hu/", target="_self"));
 
 
 // Open original photo
