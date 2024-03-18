@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/cv_logo.jpg">
+    <link rel="stylesheet" type="text/css" href="/static/style/page.css">
+    <link rel="stylesheet" type="text/css" href="/static/style/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/static/style/footer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <title>Önéletrajz</title>
+</head>
+<body>
+  <nav>
+      <li id="hide_sidebar"><img id="hide_sidebar_icon" class="nav_bar_icon" src="/static/icons/side_menu_icon_2.png"><span class="nav_bar_text">Oldalsáv elrejtése</span></li>
+      <li id="switch_english" disabled><img class="nav_bar_icon" src="/static/flags/brit_flag.jpg"><span class="nav_bar_text">Megtekintés angolul</span></li>
+      <li id="open_as_pdf"><img class="nav_bar_icon" src="/static/icons/pdf_icon.png"><span class="nav_bar_text">Megnyitás PDF-ként</span></li>
+      <li id="open_source_code"><img class="nav_bar_icon" src="/static/icons/github_icon.png"><span class="nav_bar_text">Forráskód megtekintése</span></li>
+      <!-- <li id="open_admin_area"><img class="nav_bar_icon" src="/static/icons/admin_icon.png"><span class="nav_bar_text">Admin felület</span></li> -->
+  </nav>
+  <img id="hamburger_menu_icon" src="/static/icons/rounded_menu_icon.png">
+  <div id="cv-content"
+    <div class="cv-page">
+        <h1 class="space-before-50">Önéletrajz</h1>
+        <img id="photo" class="photo space-before-16" src="/static/images/mark_balazs_small.jpg" alt="photo">
+        <div class="info space-before-100">
+            <div class="name">{{ datas.name }}</div>
+            <img src="/static/icons/cake.png" class="icon"> {{ datas.place_of_birth }}, {{ datas.date_of_birth }}<br>
+            <img src="/static/icons/colourful_location_pin_with_map.png" class="icon"> <a href="{{ datas.address.google_maps_link }}" target="_blank">{{ datas.address.address }}</a><br>
+            <img src="/static/icons/telefon.png" class="icon"> <a href="tel:{{ datas.contacts.mobile }}">{{ datas.contacts.mobile }}</a><br>
+            <img src="/static/icons/boríték.png" class="icon envelope"> <a href="mailto:{{ datas.contacts.email }}">{{ datas.contacts.email }}</a><br>
+            <i class="fab fa-skype skype-icon"></i><a class="skype-link" href="skype:{{ datas.contacts.skype }}">{{ datas.contacts.skype }}</a><br>
+            <img src="/static/icons/github_icon.png" class="icon"> <a href="https://github.com/{{ datas.github_username }}">{{ datas.github_username }}</a><br>
+        </div>
+        <h2 class="space-before-16">Képzettség:</h2>
+        <table>
+          {% for education in datas.educations %}
+            <tr>
+              <td class="table-date">{{ education.start_date }} – {{ education.finish_date }}</td><td class="right-field">
+                {% if education.link_to_document %}
+                  <a href={{ education.link_to_document }} target="_blank">
+                {% endif %}
+                {{ education.name_of_institution }}
+                {% if education.faculty %}
+                  <br>{{ education.faculty }}
+                {% endif %}
+                {% if education.specialised_in %}
+                  <br>{{ education.specialised_in }}
+                {% endif %}
+                {% if education.link_to_document %}
+                  </a>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+        <h2 class="space-before-16">Informatikai ismeretek:</h2>
+        <ul>
+          {% for it_skill in datas.it_skills %}
+            {% if it_skill.link %}
+              <a href="{{ it_skill.link }}" target="_blank"><li>{{ it_skill.text }}</li></a>
+            {% else %}
+              <li>{{ it_skill }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+        <div class="cv-page">
+          <h2>Munkahelyek:</h2>
+          <table>
+            {% for work_experience in datas.work_experiences %}
+              <tr>
+                <td class="table-date">{{ work_experience.start_date }} – {{ work_experience.finish_date }}</td>
+                <td class="right-field">
+                  {{ work_experience.name_of_workplace }}<br>
+                  {{ work_experience.job_name }}
+                  {% if work_experience.describe_todos %}
+                    <br>({{ work_experience.describe_todos }})
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+        <h2>Nyelvtudás:</h2>
+        <ul>
+          {% for spoken_language in datas.spoken_languages %}
+            <a href="{{ spoken_language.link }}" target="_blank"><li>{{ spoken_language.text }}</li></a>
+          {% endfor %}
+        </ul>
+        <h2>Gépjárművezetés:</h2>
+        <ul>
+          {% for driving_skill in datas.driving_skills %}
+            <li>{{ driving_skill }}</li>
+          {% endfor %}
+        </ul>
+        <h2>Egyéb:</h2>
+        <ul>
+          {% for other in datas.others %}
+            {% if other.link %}
+              <a href="{{ other.link }}" target="_blank"><li>{{ other.text }}</li></a>
+            {% else %}
+              <li>{{ other }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+    </div>
+  </div>
+  <footer class="footer">
+    Copyright &copy; Balázs Márk
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+  <script type="text/javascript" src="/static/js/sidebar_buttons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script type="text/javascript" src="/static/js/download_as_pdf.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+    'name': '',
+    'place-of-birth': '',
+    'date-of-birth': '',
+    'address': {
+        'address': '',
+        'google-maps-link': '',
+    },
+    'contacts': {
+        'mobile': '',
+        'email': '',
+        'skype': '',
+    }
+    'education': [{
+        start-date: '',
+        finish-date: '',
+        'name-of-school': '',
+        'name-of-course': '',
+    }],
+    'work-experience': [{
+        start-date: '',
+        finish-date: '',
+        'name-of-workplace': '',
+        'job-name': '',
+        'describe-todos': '',
+        }],
+    'it-knowladge': [
+        {
+            "text": "",
+            "link": ""
+        }
+     ],
+    'spoken-languages': [
+        {
+            "text": "",
+            "link": ""
+        }
+     ],
+    'driving-skills': [],
+    'others': [
+            {
+            "text": "",
+            "link": ""
+        }
+     ],
+}

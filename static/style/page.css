@@ -1,0 +1,167 @@
+body {
+  /* background-image: url("bricks_background.jpg"); */
+  /* background-color: rgba(70, 70, 70, 1); */
+  background-color: rgba(220, 220, 220, 0.3) ;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: rgba(0, 0, 0, 0.5) 12px 12px 8px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 14px;
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+  text-decoration: underline;
+}
+
+/*     *** CV ***     */
+.cv-page {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
+  font-size: 13px;
+  /* height: 878px; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  /* opacity: 0;*/
+  padding: 2rem 1rem 3rem 1rem;
+  width: 650px;
+}
+
+/*     *** MY DETAILS ***     */
+#name, .name {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 6px;
+  margin-top: 31px;
+  margin-bottom: 24px;
+}
+
+.info {
+  margin-bottom: 56px;
+  margin-top: 85px;
+}
+
+.icon {
+  height: 18px;
+  width: 22px;
+}
+
+.skype-icon {
+  color: dodgerblue;
+  font-size: 23px;
+}
+
+.envelope {
+  height: 14px;
+}
+
+/*     *** PHOTO ***     */
+.photo {
+  float: right;
+  width: 190px;
+}
+
+.photo:hover {
+  border: 1px solid rgba(0, 0, 0, 1);
+  box-shadow: rgba(0, 0, 0, 0.5) 18px 18px 6px;
+  width: 200px;
+}
+
+/*     *** LINKS ***     */
+a {
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(0, 0, 255, 1);
+}
+
+.skype-link {
+  bottom: 0.2rem;
+  padding-left: 6px;
+  position: relative;
+}
+
+table {
+  width: 100%;
+  font-size: 13px;
+}
+
+.table-date {
+  vertical-align: top;
+  width: 30%;
+}
+
+.right-field {
+  padding-left: 12px;
+  width: 65%;
+}
+
+/*     *** LISTS ****     */
+ul {
+  margin-top: 0px;
+  padding-left: 6px;
+}
+
+li {
+  list-style-type: none;
+  text-align: justify;
+}
+
+li:before {
+  content: "- ";
+}
+
+.second-row:before {
+  content: "";
+  padding-left: 0.6rem;
+} 
+
+.space-before-16 {
+  margin-top: 16px;
+}
+
+.space-before-50 {
+  margin-top: 50px;
+}
+
+.space-before-100 {
+  margin-top: 100px;
+}
+
+.space-before-128 {
+  margin-top: 128px;
+}
+
+/*     *** QR CODE ****     */
+#QRcodeContainer {
+  background-color: rgba(255, 255, 255, 1);
+  float: right;
+  position: relative;
+  right: -220px;
+  top: -135px;
+  margin: 24px;
+}
+
+/* media query for mobile devices */
+@media only screen and (max-device-width: 480px) {
+  /* table {
+    font-size: 13px;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust;
+    -ms-text-size-adjust;
+  } */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+}
